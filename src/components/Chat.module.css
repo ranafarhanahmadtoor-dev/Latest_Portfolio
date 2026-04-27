@@ -1,0 +1,135 @@
+.chatWrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bubble:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.window {
+  width: 350px;
+  height: 500px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  padding: 1.2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--accent-secondary);
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.ai {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-bottom-left-radius: 2px;
+}
+
+.inputArea {
+  padding: 1rem;
+  background: var(--surface);
+  border-top: 1px solid var(--surface-border);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  color: white;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.sendBtn {
+  background: var(--accent);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loading {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .chatWrapper {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .window {
+    width: calc(100vw - 2rem);
+    height: 400px;
+    max-height: calc(100vh - 100px);
+  }
+}

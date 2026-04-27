@@ -1,0 +1,85 @@
+.journey {
+  padding: 8rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--surface-border);
+  padding-left: 3rem;
+  margin-left: 1rem;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  left: calc(-3rem - 11px);
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--background);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.description {
+  color: var(--text-dim);
+}
+
+@media (max-width: 768px) {
+  .journey {
+    padding: 4rem 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+  
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .item::before {
+    left: calc(-2rem - 11px);
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+}
+

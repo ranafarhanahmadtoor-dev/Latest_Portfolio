@@ -1,0 +1,38 @@
+.footer {
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--surface-border);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.email {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
